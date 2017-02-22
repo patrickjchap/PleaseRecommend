@@ -1,35 +1,57 @@
 <html>
 
+	<head>
+		<link rel="stylesheet" href="account.css">
+	</head>
+	
+	<div class = "logo">
+			<img src = "PRLogo.png" class="imgLogo"> 
+	</div>
+
 	<div class="navigation">
-		<div id="myaccountTab">
-			<a href="myaccount.html"> My Account </a>
+		<div class ="accountTab">
+			<a href="myaccount.html" class="tabLink"> My Account </a>
 		</div>
 
-		<div id="mymoviesTab">
-			<a href="mymovies.html"> My Movies </a>
+		<div class ="accountTab">
+			<a href="mymovies.html" class="tabLink"> My Movies </a>
 		</div>
 		
-		<div id ="recommendationsTab">
-			<a href="recommendations.html"> Recommendations </a>
+		<div class ="accountTab">
+			<a href="recommendations.html" class="tabLink"> Recommendations </a>
 		</div>
 		
-		<div id ="searchTab">
-			<a href="search.html"> Search Movies </a>
+		<div class ="accountTab" id="activeTab">
+			<a href="search.html" class="tabLink"> Search Movies </a>
 		</div>
 	</div>
 	
 	<header class = "accountTopBanner">
-		Search
-		<input type="text">
+			<div class="topText">Search <input type="text" id="searchBox"><a href = "search.html" id = "searchButton">go</a></div>
 	</header>
 	
-	<div id="movieInfo">
-		Name
-		Your Rating ../10
-		IMDB RATING:
-		METASCORE:
-		DESCRIPTION:
+	<div class="middleSection">
+	
+		<div id="movieInfo">
+			<pre>
+			Name:
+			
+			Your Rating ../10
+			
+			IMDB RATING:
+			
+			METASCORE:
+			
+			DESCRIPTION:
+
+			</pre>
+		</div>
+		
+		
 	</div>
 	
+	<footer class  = "copyrightFoot">
+		Patrick Chapman © 2017
+	</footer>
 
 </html>

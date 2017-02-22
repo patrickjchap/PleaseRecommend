@@ -1,44 +1,56 @@
 <html>
+	
+	<head>
+		<link rel="stylesheet" href="account.css">
+	</head>
+	
+	<div class = "logo">
+			<img src = "PRLogo.png" class="imgLogo"> 
+	</div>
 
 	<div class="navigation">
-		<div id="myaccountTab">
-			<a href="myaccount.html"> My Account </a>
+		<div class="accountTab" id="activeTab">
+			<a href="myaccount.html" class="tabLink"> My Account </a>
 		</div>
 
-		<div id="mymoviesTab">
-			<a href="mymovies.html"> My Movies </a>
+		<div class="accountTab">
+			<a href="mymovies.html" class="tabLink"> My Movies </a>
 		</div>
 		
-		<div id ="recommendationsTab">
-			<a href="recommendations.html"> Recommendations </a>
+		<div class="accountTab">
+			<a href="recommendations.html" class="tabLink"> Recommendations </a>
 		</div>
 		
-		<div id ="searchTab">
-			<a href="search.html"> Search Movies </a>
+		<div class="accountTab">
+			<a href="search.html" class="tabLink"> Search Movies </a>
 		</div>
 	</div>
 	
 	<header class = "accountTopBanner">
-		Account information
+		<div class="topText">Account Information</div>
 	</header>
 	
-	<div id="nameAccount">
-		Name:
-		<input type="text">
+	<div class="middleSection">
+	
+		<div class="userInfo">
+			Name: N/A
+		</div>
+	
+		<div class="userInfo">
+			Email: N/A
+		</div>
+	
+		<div class="userInfo">
+			Username: N/A
+		</div>
+	
+		<div class="linkButton">
+			<a href="changepassword.html"> Change Password </a>
+		</div>
 	</div>
 	
-	<div id ="emailAccount">
-		Email:
-		<input type="text">
-	</div>
-	
-	<div id="userAccount">
-		Username:
-		<input type="text">
-	</div>
-	
-	<div id="changePassword">
-		<a href="changepassword.html"> Change Password </a>
-	</div>
+	<footer class  = "copyrightFoot">
+		Patrick Chapman © 2017
+	</footer>
 	
 </html>

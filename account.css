@@ -1,0 +1,91 @@
+
+.logo{
+	float:right;
+	width:285px;
+	height:122px;
+}
+
+.imgLogo{
+	position:relative;
+	padding-top:20px;
+	padding-right: 10px;
+	width: 70%;
+	height:70%;
+}
+
+.navigation{
+	float:left;
+	width:15%;
+	height:100%;
+}
+
+.accountTab{
+	height:24%;
+	border-style:groove;
+	background-color:orange;
+}
+
+.accountTopBanner{
+	height:15%;
+	border-bottom:groove;
+}
+
+.topText{
+	padding-left:20%;
+	padding-top:2%;
+	color:white;
+	font-size:48;
+}
+
+.tabLink{
+	height:100%;
+	width:100%;
+	text-decoration:none;
+}
+
+
+.middleSection{
+	padding-left:20%;
+	padding-top:10%;
+	font-size:24;
+}
+
+#activeTab{
+	background-color: #f4d442;
+}
+
+.tableContent{
+	border-style:dotted;
+}
+
+.userInfo{
+	padding-top:10px;
+}
+
+
+.copyrightFoot{
+	width:99%;
+	position:absolute;
+	bottom:0;
+	border-top-style:ridge;
+	padding-left: 1%;
+	color:white;
+	background-color:orange;
+	
+}
+
+#searchButton{
+	width:15px;
+	background-color:#ff3300;
+	border:2px solid #660000;
+	border-radius:5px;
+	color:#fff;
+	padding: 10px 10px 10px 10px;
+	font-size:12;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:orange;
+}

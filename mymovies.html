@@ -1,42 +1,57 @@
 <html>
 
+	<head>
+		<link rel="stylesheet" href="account.css">
+	</head>
+	
+	<div class = "logo">
+			<img src = "PRLogo.png" class="imgLogo"> 
+	</div>
+
 	<div class="navigation">
-		<div id="myaccountTab">
-			<a href="myaccount.html"> My Account </a>
+		<div class="accountTab">
+			<a href="myaccount.html" class="tabLink"> My Account </a>
 		</div>
 
-		<div id="mymoviesTab">
-			<a href="mymovies.html"> My Movies </a>
+		<div class="accountTab" id="activeTab">
+			<a href="mymovies.html" class="tabLink"> My Movies </a>
 		</div>
 		
-		<div id ="recommendationsTab">
-			<a href="recommendations.html"> Recommendations </a>
+		<div class="accountTab">
+			<a href="recommendations.html" class="tabLink"> Recommendations </a>
 		</div>
 		
-		<div id ="searchTab">
-			<a href="search.html"> Search Movies </a>
+		<div class="accountTab">
+			<a href="search.html" class="tabLink"> Search Movies </a>
 		</div>
 	</div>
-	
+
 	<header class = "accountTopBanner">
-		My Ratings
-	</header>
-	
-	<table id="tableRatings">
-		<tr>
-			<th>Name</th>
-			<th>Rating</th>
-			<th>Date Rated</th>
-			<th>Genre</th>
-		</tr>
+		<div class="topText">My Movies</div>
+	</header>	
+
+	<div class="middleSection">
+
+		<table class="tableContent">
+			<tr>
+				<th>Name</th>
+				<th>Rating</th>
+				<th>Date Rated</th>
+				<th>Genre</th>
+			</tr>
 		
-		<tr>
-			<th>Example</th>
-			<th>0/10</th>
-			<th>01/01/2000</th>
-			<th>Awful</th>
-		</tr>
-	</table>
+			<tr>
+				<th>Example</th>
+				<th>0/10</th>
+				<th>01/01/2000</th>
+				<th>Awful</th>
+			</tr>
+		</table>
+	</div>
+	
+	<footer class  = "copyrightFoot">
+			Patrick Chapman © 2017
+	</footer>
 	
 
 </html>
