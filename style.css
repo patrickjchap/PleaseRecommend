@@ -1,0 +1,67 @@
+#mainPgLinks {
+	float: right;
+	padding-top:20px;
+}
+
+#mainPageHead {
+	position: relative;
+	background-color:orange;
+	width:100%;
+	height:20%;
+	
+	
+}
+
+#logo {
+	float:left;
+	width:285px;
+	height:122px;
+}
+
+#imgLogo {
+	position:relative;
+	padding-top:20px;
+	padding-left: 10px;
+	width: 70%;
+	height:70%;
+}
+
+a.mainPgButton{
+	background-color:#ff3300;
+	border:2px solid #660000;
+	border-radius:5px;
+	color:#fff;
+	margin-right:10px;
+	padding: 10px 10px 10px 10px;
+}
+
+#movieSlide{
+	height:40%;
+	text-align:center;
+	font-size:40;
+}
+
+#greatMovieText{
+	background-color:orange;
+	text-shadow: 3px 2px black;
+	color: white;
+	text-align:center;
+	font-size:36;
+	height:40%;
+	
+}
+
+#copyrightFoot{
+	width:99%;
+	position:absolute;
+	bottom:0;
+	border-top-style:ridge;
+	padding-left: 1%;
+	color:white;
+	
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+}

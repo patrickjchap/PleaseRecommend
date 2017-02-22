@@ -1,0 +1,46 @@
+#copyrightFoot{
+	width:99%;
+	position:absolute;
+	bottom:0;
+	border-top-style:ridge;
+	padding-left: 1%;
+	color:white;
+	
+}
+
+#user{
+	width:100%;
+}
+#pass{
+	width: 100%;
+}
+
+#userLabel{
+	color:white;
+}
+#passLabel{
+	color:white;
+}
+
+.centerPage{
+	width:30%;
+	padding-top:200px;
+	position:fixed;
+	left:38%;
+}
+
+#loginButton{
+	float:right;
+	background-color:#ff3300;
+	border:2px solid #660000;
+	border-radius:5px;
+	color:#fff;
+	margin-right:10px;
+	padding: 10px 10px 10px 10px;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:orange;
+}
