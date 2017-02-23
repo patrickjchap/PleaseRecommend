@@ -21,20 +21,23 @@
 
 .accountTab{
 	height:24%;
+	font-size: 1.7vw;
 	border-style:groove;
-	background-color:orange;
+	background-image: linear-gradient(#ff9933, #ffcc66 );
+
 }
 
 .accountTopBanner{
-	height:15%;
-	border-bottom:groove;
+	background-color: orange;
+	height:150px;
+	
 }
 
 .topText{
 	padding-left:20%;
 	padding-top:2%;
 	color:white;
-	font-size:48;
+	font-size:40px;
 }
 
 .tabLink{
@@ -45,13 +48,15 @@
 
 
 .middleSection{
+	background-color:white;
+	height:65%;
 	padding-left:20%;
 	padding-top:10%;
 	font-size:24;
 }
 
 #activeTab{
-	background-color: #f4d442;
+	background-image: linear-gradient(yellow, white );
 }
 
 .tableContent{
@@ -76,16 +81,18 @@
 
 #searchButton{
 	width:15px;
-	background-color:#ff3300;
-	border:2px solid #660000;
+	background-color:#ff6600;
+	border:2px solid #ff6600;
 	border-radius:5px;
-	color:#fff;
+	color:#ffffff;
 	padding: 10px 10px 10px 10px;
 	font-size:12;
+	text-decoration:none;
 }
 
 body{
 	margin: 0px;
 	padding: 0px;
 	background-color:orange;
+	font-family: 'Baloo', cursive;
 }
