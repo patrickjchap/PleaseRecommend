@@ -1,36 +1,32 @@
 <?php
 	session_start();
-	define('DB_SERVER', 'localhost:3036');
+	define('DB_SERVER', "localhost");
     define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', '');
-    define('DB_DATABASE', 'pr_user');
+    define('DB_PASSWORD', "");
+    define('DB_DATABASE', 'mysql');
    
     $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 	
-	<?php
-   include("config.php");
-   session_start();
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   if($_SERVER["REQUEST_METHOD"] === "POST") {
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+      $sql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$myusername' and USER_PASSWORD = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
       
       $count = mysqli_num_rows($result);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         session_register("myusername");
+         //session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          
-         header("location: welcome.php");
+         header("location: ../account/myaccount.html");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
@@ -51,16 +47,16 @@
 	</header>
 	
 	<div class="centerPage">
-		<div class = "accountInfo">
-			<label for="user" class="formLabel">Username/Email:</label>
-			<br>
-			<input type="text" id="user" class="formInput" name="username">
-		</div>
-		<form action = "" method = "post">
+		<form action = "login.php" method = "post">
+			<div class = "accountInfo">
+				<label for="user" class="formLabel">Username/Email:</label>
+				<br>
+				<input type="text" id="user" class="formInput" name="username">
+			</div>
 			<div class = "accountInfo">
 				<label for="pass" class="formLabel">Password:</label>
 				<br>
-				<input type="text" id="pass" class="formInput" name="password">
+				<input type="password" id="pass" class="formInput" name="password">
 			</div>
 	
 			<div class = "formLinks">
