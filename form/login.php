@@ -6,13 +6,28 @@
     define('DB_DATABASE', 'mysql');
    
     $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
 	
-   
-   if($_SERVER["REQUEST_METHOD"] === "POST") {
+	if(isset($_SESSION['login_user'])){
+		$tmpusername = $_SESSION['login_user'];
+		$tmpsql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$tmpusername'";
+		$tmpresult = mysqli_query($db,$tmpsql);
+		$tmprow = mysqli_fetch_array($tmpresult,MYSQLI_ASSOC);
+	
+		$tmpcount = mysqli_num_rows($tmpresult);
+		if($tmpcount == 1){
+			header("location: ../account/myaccount.php");
+		}
+	}
+	
+	
+	
+   $error = "";
+   if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['loginSubmit'])) {
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      $mypassword = mysqli_real_escape_string($db,hash('sha512', $_POST['password']));
       
       $sql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$myusername' and USER_PASSWORD = '$mypassword'";
       $result = mysqli_query($db,$sql);
@@ -26,11 +41,13 @@
          //session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          
-         header("location: ../account/myaccount.html");
+         header("location: ../account/myaccount.php");
       }else {
-         $error = "Your Login Name or Password is invalid";
+         $error = "Your username/password is incorrect";
+		  unset($_POST);
       }
    }
+  
     
 ?>
 
@@ -42,14 +59,17 @@
 	
 	<header class="logoHeader">
 		<div class = "logo">
-			<a href = "../index.html"><img src = "../PRLogo.png" class="imgLogo"></a> 
+			<a href = "../index.php"><img src = "../PRLogo.png" class="imgLogo"></a> 
 		</div>
 	</header>
 	
+	
 	<div class="centerPage">
-		<form action = "login.php" method = "post">
+		<?php echo '<div class = "formError"><p>' . htmlspecialchars($error) . '</p></div>' ?>
+		<form action = "" method = "post">
+		
 			<div class = "accountInfo">
-				<label for="user" class="formLabel">Username/Email:</label>
+				<label for="user" class="formLabel">Username:</label>
 				<br>
 				<input type="text" id="user" class="formInput" name="username">
 			</div>
@@ -62,11 +82,11 @@
 			<div class = "formLinks">
 				<a href = "forgotpassword.html"> Forgot Password? </a>
 				<br>
-				<a href = "signup.html"> Create Account </a>
+				<a href = "signup.php"> Create Account </a>
 			</div>
 	
-			<div class = "formButton">
-				<input type = "submit" value = "Log In"/>
+			<div>
+				<input type = "submit" class = "formButton" name = "loginSubmit" value = "Log In"/>
 			</div>
 		</form>
 	</div>

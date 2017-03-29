@@ -2,6 +2,11 @@ a{
 		text-shadow: 0px 0px;
 }
 
+input#submit{
+	background:none;
+	border:none;
+}	
+
 .logo{
 	float:left;
 	width:285px;
@@ -41,10 +46,22 @@ a{
 	background-color:#ff6600;
 	border:2px solid #ff6600;
 	border-radius:5px;
-	color:#ff6600;
+	color:blue;
 	margin-right:50%;
 	padding: 10px 10px 10px 10px;
+	cursor:pointer;
 }
+
+.formButton:hover{
+	float:right;
+	background-color:#ff8800;
+	border:2px solid #ff6600;
+	border-radius:5px;
+	color:blue;
+	margin-right:50%;
+	padding: 10px 10px 10px 10px;
+	cursor:pointer;
+}	
 
 .copyrightFoot{
 	width:99%;

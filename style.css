@@ -36,6 +36,10 @@ a.mainPgButton{
 	text-decoration:none;
 }
 
+a.mainPgButton:hover{
+	background-color:#ff8800;
+}
+
 #movieSlide{
 	background-color:white;
 	height:40%;

@@ -5,6 +5,24 @@
 	height:122px;
 }
 
+.logoutButton{
+	background-color:#ff6600;
+	border:2px solid #ff6600;
+	border-radius:5px;
+	color:blue;
+	padding: 10px 10px 10px 10px;
+	cursor:pointer;
+}
+
+.logoutButton:hover{
+	background-color:#ff8800;
+	border:2px solid #ff6600;
+	border-radius:5px;
+	color:blue;
+	padding: 10px 10px 10px 10px;
+	cursor:pointer;
+}
+
 .imgLogo{
 	position:relative;
 	padding-top:20px;
@@ -25,6 +43,10 @@
 	border-style:groove;
 	background-image: linear-gradient(#ff9933, #ffcc66 );
 
+}
+
+.accountTab:hover{
+	background-image: linear-gradient(#ff9933, #ff8866 );
 }
 
 .accountTopBanner{
