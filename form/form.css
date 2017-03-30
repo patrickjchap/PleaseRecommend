@@ -28,7 +28,9 @@ input#submit{
 
 .formLabel{
 	color:black;
+	font-size: 1.3vw;
 }
+
 
 .formInput{
 	width:50%;
@@ -41,6 +43,14 @@ input#submit{
 	left:38%;
 }
 
+.centerPageError{
+	width:30%;
+	padding-top:200px;
+	position:relative;
+	left:38%;
+	color:red;
+}
+
 .formButton{
 	float:right;
 	background-color:#ff6600;
@@ -50,6 +60,11 @@ input#submit{
 	margin-right:50%;
 	padding: 10px 10px 10px 10px;
 	cursor:pointer;
+}
+
+.formError{
+	color:red;
+	font-size:1.3vw;
 }
 
 .formButton:hover{
@@ -66,7 +81,7 @@ input#submit{
 .copyrightFoot{
 	width:99%;
 	position:absolute;
-	bottom:0;
+	bottom:0px;
 	border-top-style:ridge;
 	padding-left: 1%;
 	color:white;

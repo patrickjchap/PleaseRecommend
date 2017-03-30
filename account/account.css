@@ -42,6 +42,7 @@
 	font-size: 1.7vw;
 	border-style:groove;
 	background-image: linear-gradient(#ff9933, #ffcc66 );
+	text-align:center;
 
 }
 
@@ -51,15 +52,16 @@
 
 .accountTopBanner{
 	background-color: orange;
-	height:150px;
+	height:20%;
 	
 }
 
 .topText{
 	padding-left:20%;
+	height:20%;
 	padding-top:2%;
 	color:white;
-	font-size:40px;
+	font-size:4vw;
 }
 
 .tabLink{
@@ -92,6 +94,7 @@
 
 .copyrightFoot{
 	width:99%;
+	height:5%;
 	position:absolute;
 	bottom:0;
 	border-top-style:ridge;
@@ -110,6 +113,10 @@
 	padding: 10px 10px 10px 10px;
 	font-size:12;
 	text-decoration:none;
+}
+
+#searchButton:hover{
+	background-color:#ff8800;
 }
 
 body{

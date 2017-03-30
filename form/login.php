@@ -1,20 +1,13 @@
 <?php
 	session_start();
-	define('DB_SERVER', "localhost");
-    define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', "");
-    define('DB_DATABASE', 'mysql');
-   
-    $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+	include_once '../classes/Dao.php';
+	$dao = new Dao();
 
 	
 	if(isset($_SESSION['login_user'])){
 		$tmpusername = $_SESSION['login_user'];
-		$tmpsql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$tmpusername'";
-		$tmpresult = mysqli_query($db,$tmpsql);
-		$tmprow = mysqli_fetch_array($tmpresult,MYSQLI_ASSOC);
-	
-		$tmpcount = mysqli_num_rows($tmpresult);
+		$tmpcount = $dao->getNumUser($tmpusername);
+		
 		if($tmpcount == 1){
 			header("location: ../account/myaccount.php");
 		}
@@ -26,14 +19,10 @@
    if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['loginSubmit'])) {
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,hash('sha512', $_POST['password']));
+      $myusername = $_POST['username'];
+      $mypassword = hash('sha512', $_POST['password']);
       
-      $sql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$myusername' and USER_PASSWORD = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      
-      $count = mysqli_num_rows($result);
+      $count = $dao->getNumUserWithPass($myusername, $mypassword);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
 		

@@ -1,5 +1,8 @@
 <?php
 	include_once 'form.php';
+	include_once '../classes/Dao.php';
+	
+	$dao = new Dao();
 	
 	$error = "";
     $userError = "";
@@ -21,10 +24,7 @@
 	  if($_POST['desired_username'] != ""){
 			//check to see if username is taken
 			$username = htmlspecialchars($_POST['desired_username']);
-			$sql = "SELECT USER_NAME FROM pr_user WHERE USER_NAME = '$username'";
-			$result = mysqli_query($db,$sql) or die(mysqlierror($db));
-			$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-			$count = mysqli_num_rows($result);
+			$count = $dao->getNumUser($username);
 			
 			if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $username)){
 					$userError = "Username cannot contain special characters or spaces.";
@@ -46,10 +46,7 @@
 	  if($_POST['desired_email'] != ""){
 			//check to see if email is taken
 			$emailname = htmlspecialchars($_POST['desired_email']);
-			$sql = "SELECT USER_EMAIL FROM pr_user WHERE USER_EMAIL = '$emailname'";
-			$result = mysqli_query($db,$sql);
-			$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-			$count = mysqli_num_rows($result);
+			$count = $dao->getNumEmail($emailname);
 			
 			$tmpemail = filter_var($emailname, FILTER_SANITIZE_EMAIL);
 			
@@ -170,7 +167,7 @@
 	
 	<header class="logoHeader">
 		<div class = "logo">
-			<a href = "../index.html"><img src = "../PRLogo.png" class="imgLogo"></a>  
+			<a href = "../index.php"><img src = "../PRLogo.png" class="imgLogo"></a>  
 		</div>
 	</header>
 
@@ -180,45 +177,87 @@
                 <?php echo $totalError ?>
             </div>
 			<div class = "accountInfo">
-				<label for="user" class="formLabel">Username: <?php echo $userError ?></label>
+				<label for="user" class=
+					<?php if($userError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Username: <?php echo $userError ?></label>
 				<br>
 				<input type="text" id="user" class="formInput" name="desired_username">
 			</div>
 	
 			<div class = "accountInfo">
-				<label for="email" class="formLabel">Email: <?php echo $emailError ?></label>
+				<label for="user" class=
+					<?php if($emailError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Email: <?php echo $emailError ?></label>
 				<br>
 				<input type="text" id="email" class="formInput" name="desired_email">
 			</div>
 	
 			<div class = "accountInfo">
-				<label for="repEmail" class="formLabel">Repeat Email: <?php echo $repemailError ?></label>
+				<label for="user" class=
+					<?php if($repemailError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Repeat Email: <?php echo $repemailError ?></label>
 				<br>
 				<input type="text" id="repEmail" class="formInput" name="repdesired_email">
 			</div>
 	
 			<div class= "accountInfo">
-				<label for="fName" class="formLabel">First Name: <?php echo $fnameError ?></label>
+				<label for="user" class=
+					<?php if($fnameError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>First Name: <?php echo $fnameError ?></label>
 				<br>
 				<input type="text" id="fName" class="formInput" name="desired_fname">
 			</div>
 	
 			<div class = "accountInfo">
-				<label for="lName" class="formLabel">Last Name: <?php echo $lnameError ?></label>
+				<label for="user" class=
+					<?php if($lnameError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Last Name: <?php echo $lnameError ?></label>
 				<br>
 				<input type="text" id="lName" class="formInput" name="desired_lname">
 			</div>
 	
 			<div class = "accountInfo">
-				<label for="pass" class="formLabel">Password: <?php echo $passwordError ?></label>
+				<label for="user" class=
+					<?php if($passwordError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Password: <?php echo $passwordError ?></label>
 				<br>
-				<input type="text" id="pass" class="formInput" name="desired_pass">
+				<input type="password" id="pass" class="formInput" name="desired_pass">
 			</div>
 	
 			<div class = "accountInfo">
-				<label for="repPass" class="formLabel">Repeat Password: <?php echo $reppasswordError ?></label>
+				<label for="user" class=
+					<?php if($reppasswordError == ""){
+						echo '"formLabel"';
+					}else{
+						echo '"formLabelError"';
+					} ?>
+					>Repeat Password: <?php echo $reppasswordError ?></label>
 				<br>
-				<input type="text" id="repPass" class="formInput" name="repdesired_pass">
+				<input type="password" id="repPass" class="formInput" name="repdesired_pass">
 			</div>
 		
 			<div class = "formLinks">
