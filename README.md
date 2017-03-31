@@ -1,11 +1,11 @@
 # PleaseRecommend
 
-##TODO
+## TODO
 
-*Build actual recommendation table
+* Build actual recommendation table
 
-*Clean up table formatting for seen movies/recommended movies
+* Clean up table formatting for seen movies/recommended movies
 
-*Format center div on account pages to be more legible
+* Format center div on account pages to be more legible
 
-*Add image coaster to front page
+* Add image coaster to front page
