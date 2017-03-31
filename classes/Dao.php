@@ -24,8 +24,7 @@
 			$q = $conn->prepare("INSERT INTO pr_user (USER_EMAIL, USER_FNAME,
 			USER_LNAME, USER_NAME, USER_PASSWORD) VALUES ('$newEmail',
 			'$newFName', '$newLName', '$newUser', '$newPassword')");
-	
-			return $conn->query($q);
+            $q->execute();
 		}
 		
 		public function getNumUser($qUsername) {

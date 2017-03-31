@@ -138,16 +138,10 @@
       }
       
       if(!$signUpError){
-            $hashpass = mysqli_real_escape_string($db, hash('sha512', $passwordname));
-            $emailname = mysqli_real_escape_string($db, $emailname);
-            $fnamename = mysqli_real_escape_string($db, $fnamename);
-            $lnamename = mysqli_real_escape_string($db, $lnamename);
-            $username = mysqli_real_escape_string($db, $username);
-          
-            $sqlIN = "INSERT INTO pr_user (USER_EMAIL, USER_FNAME, USER_LNAME, USER_NAME, USER_PASSWORD) VALUES ('$emailname', '$fnamename', '$lnamename', '$username', '$hashpass')";
-            $result = mysqli_query($db,$sqlIN);
+            $hashpass = hash('sha512', $passwordname);
             
-            
+            $dao->createUser($username, $hashpass, $emailname, $fnamename, $lnamename);          
+      
             $_SESSION['login_user'] = $myusername;
          
             header("location: ../account/myaccount.php");
