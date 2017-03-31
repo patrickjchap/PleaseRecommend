@@ -9,3 +9,5 @@
 * Format center div on account pages to be more legible
 
 * Add image coaster to front page
+
+* Fix links that lead to dead html pages
