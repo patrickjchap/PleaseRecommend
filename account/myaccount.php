@@ -1,5 +1,12 @@
 <?php
-	include 'account.php';
+	include_once 'account.php';
+    $dao = new Dao();
+    
+    $username = $_SESSION['login_user'];
+    $name = $dao->getUserFName($username);
+    $email = $dao->getUserEmail($username);
+    
+    
 ?>
 
 <html>

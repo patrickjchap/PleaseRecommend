@@ -60,10 +60,49 @@
 			$q->execute();
 			$rowCount = $q->fetchColumn(0);
 			
-			return $rowCount;
-			
-			
+			return $rowCount;	
 		}
+        
+        public function getUserEmail($qUsername){
+            $conn = $this->getConnection();
+			$q = $conn->prepare("SELECT USER_EMAIL FROM pr_user WHERE
+			USER_NAME = '$qUsername'");
+			
+			$q->execute();
+			$ret = $q->fetchColumn();
+			
+			return $ret;
+        }
+        
+        public function getUserFName($qUsername) {
+            $conn = $this->getConnection();
+			$q = $conn->prepare("SELECT USER_FNAME FROM pr_user WHERE
+			USER_NAME = '$qUsername'");
+			
+			$q->execute();
+            $ret = $q->fetchColumn();
+			
+			return $ret;
+        }
+        
+        public function getUserJson($qUsername){
+                $conn = $this->getConnection();
+                $q = $conn->prepare("SELECT USER_MOVIES FROM pr_user WHERE
+                USER_NAME = '$qUsername'");
+                
+                $q->execute();
+                $ret = $q->fetchColumn();
+                return $ret;
+        }
+        
+        public function setUserRating($username, $json){
+                $conn = $this->getConnection();
+                $q = $conn->prepare("UPDATE pr_user SET USER_MOVIES = '$json' WHERE
+                USER_NAME = '$username'");
+                
+                $q->execute();
+                
+        }
 		
 	}
 

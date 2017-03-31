@@ -1,5 +1,12 @@
 <?php
 	include 'account.php';
+    include_once '../classes/Dao.php';
+    $dao = new Dao();
+    
+    $username = $_SESSION['login_user'];
+    $json = $dao->getUserJSON($username);
+    $info = json_decode($json, true);
+    
 ?>
 
 <html>
@@ -30,19 +37,13 @@
 	<div class="middleSection">
 
 		<table class="tableContent">
-			<tr>
-				<th>Name</th>
-				<th>Rating</th>
-				<th>Date Rated</th>
-				<th>Genre</th>
-			</tr>
-		
-			<tr>
-				<th>Example</th>
-				<th>0/10</th>
-				<th>01/01/2000</th>
-				<th>Awful</th>
-			</tr>
+			<?php
+                foreach($info as $key => $value){
+                    
+                    echo "<tr><th>" . $key . "</th>" . "<th>" . $value . "</th><tr>";
+                 
+                }
+            ?>
 		</table>
 	</div>
 	

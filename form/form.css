@@ -28,7 +28,12 @@ input#submit{
 
 .formLabel{
 	color:black;
-	font-size: 1.3vw;
+	font-size: 1.1vw;
+}
+
+.formLabelError{
+	color:red;
+	font-size: 1.1vw;
 }
 
 
