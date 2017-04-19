@@ -156,7 +156,12 @@
 
 	<head>
 		<link rel="stylesheet" href="form.css">
-		<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Bitter" rel="stylesheet">
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="formerror.js"></script>
+		<script type="text/javascript" src="../js/jquery.validate.js"></script>
+		<script type="text/javascript" src="signup.js"></script>
 	</head>
 	
 	<header class="logoHeader">
@@ -165,7 +170,7 @@
 		</div>
 	</header>
 
-	<form action = "" method = "post">
+	<form action = "" method = "post" id="signupForm">
 		<div class="centerPage">
             <div>
                 <?php echo $totalError ?>
@@ -179,7 +184,7 @@
 					} ?>
 					>Username: <?php echo $userError ?></label>
 				<br>
-				<input type="text" id="user" class="formInput" name="desired_username">
+				<input type="text" id="user" class="formInput" name="desired_username" value="<?php echo $username?>">
 			</div>
 	
 			<div class = "accountInfo">
@@ -191,7 +196,7 @@
 					} ?>
 					>Email: <?php echo $emailError ?></label>
 				<br>
-				<input type="text" id="email" class="formInput" name="desired_email">
+				<input type="text" id="email" class="formInput" name="desired_email" value="<?php echo $emailname?>">
 			</div>
 	
 			<div class = "accountInfo">
@@ -215,7 +220,7 @@
 					} ?>
 					>First Name: <?php echo $fnameError ?></label>
 				<br>
-				<input type="text" id="fName" class="formInput" name="desired_fname">
+				<input type="text" id="fName" class="formInput" name="desired_fname" value="<?php echo $fnamename?>">
 			</div>
 	
 			<div class = "accountInfo">
@@ -227,7 +232,7 @@
 					} ?>
 					>Last Name: <?php echo $lnameError ?></label>
 				<br>
-				<input type="text" id="lName" class="formInput" name="desired_lname">
+				<input type="text" id="lName" class="formInput" name="desired_lname" value="<?php echo $lnamename?>">
 			</div>
 	
 			<div class = "accountInfo">

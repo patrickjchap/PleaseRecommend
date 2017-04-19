@@ -89,13 +89,10 @@
 
 	<head>
 		<link rel="stylesheet" href="account.css">
-		<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Bitter" rel="stylesheet">
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="search.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" />
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 	</head>
 	
 	<div class = "logo">
@@ -121,24 +118,26 @@
 	</header>
 	
 	<div class="middleSection">
-		<div>
+		<div id="picContainer">
 			<img id="moviePicSearch" src="<?php echo $imgURL ?>"/>
 		</div>
 	
 		<div id="movieInfo">
-			Name: <?php echo $movieTitle ?>
-            <br>
-            <div class="textError"> <?php echo $errorRating ?> </div>
-			<label for="ratingBox">Your Rating: <?php echo $currentRating ?></label>
-                <form action = "" method = "GET" id="ratingForm">
-                    <input type="text" name="userSubmitRating" id="userRatingText" placeholder=
-                    <?php
-                        echo '"' . $currentRating . '"';
-                    ?>>
-                </form>
-			IMDB RATING: <?php echo $IMDBRating ?>
-			<br>
-			DESCRIPTION: <?php echo $movieDescription ?>
+			<div id="movieName" class="movieText">Name: <?php echo $movieTitle ?></div>
+           
+            <div class="textError" id="searchError"> <?php echo $errorRating ?> </div>
+			<div id="ratingContainer" class="movieText">
+				<label for="ratingBox">Your Rating: <?php echo $currentRating ?></label>
+					<form action = "" method = "GET" id="ratingForm">
+						<input type="text" name="userSubmitRating" id="userRatingText" placeholder=
+						<?php
+							echo '"' . $currentRating . '"';
+						?>>
+					</form>
+			</div>
+			<div id="movieIMDB" class="movieText">IMDB RATING: <?php echo $IMDBRating ?></div>
+			
+			<div id="movieDesc" class="movieText">DESCRIPTION: <?php echo $movieDescription ?></div>
 		</div>
 	</div>
 	

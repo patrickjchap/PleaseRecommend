@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-		<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Bitter" rel="stylesheet">
 	</head>
 
 	<header id = "mainPageHead">
@@ -30,6 +30,18 @@
 		</div>
 		<div class="moviePic">
 		<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"/>
+		</div>
+		<div class="moviePic">
+		<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzlhYjEzOGItN2MwNS00ODRiLWE5OTItYThiNmJlMTdmMzgxXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"/>
+		</div>
+		<div class="moviePic">
+		<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIyNjY2MTgxMF5BMl5BanBnXkFtZTcwODg2Njk1OA@@._V1_SX300.jpg"/>
+		</div>
+		<div class="moviePic">
+		<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1_SX300.jpg"/>
+		</div>
+		<div class="moviePic">
+		<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NzY5ODQwMV5BMl5BanBnXkFtZTcwNzY1NzcxNw@@._V1_SX300.jpg"/>
 		</div>
 	</div>
 	

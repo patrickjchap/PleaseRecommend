@@ -39,11 +39,15 @@
 
 .accountTab{
 	height:24%;
-	font-size: 1.7vw;
+	font-size: 1.5vw;
 	border-style:groove;
 	background-image: linear-gradient(#ff9933, #ffcc66 );
 	text-align:center;
 
+}
+
+#picContainer{
+	float: left;
 }
 
 .accountTab:hover{
@@ -168,14 +172,24 @@ tr{
 	text-decoration:none;
 }
 
+.movieText{
+	margin-left:40%;
+	padding-bottom:2%;
+}
+
+#searchError{
+	margin-left:40%;
+	padding-bottom:2%;
+}
+
 .searchButton:hover{
 	background-color:#ff8800;
 }
 
 
 #moviePicSearch{
-    width: 10%;
-    height: 40%;
+    width: auto;
+    height: auto;
 }
 
 #movieInfo{
@@ -186,7 +200,7 @@ body{
 	margin: 0px;
 	padding: 0px;
 	background-color:orange;
-	font-family: 'Baloo', cursive;
+	font-family: 'Bitter', serif;
 }
 
 .textError{

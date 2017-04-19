@@ -21,6 +21,12 @@ input#submit{
 	height:70%;
 }
 
+.error{
+    color: red;
+	font-size: 1.1vw;
+
+}
+
 .accountInfo{
 	padding-top:10px;
 	width:100%;
@@ -38,11 +44,15 @@ input#submit{
 
 
 .formInput{
+	width:100%;
+}
+
+#loginForm{
 	width:50%;
 }
 
 .centerPage{
-	width:30%;
+	width:40%;
 	padding-top:200px;
 	position:relative;
 	left:38%;
@@ -102,5 +112,5 @@ body{
 	margin: 0px;
 	padding: 0px;
 	background: linear-gradient(white, orange);
-	font-family: 'Baloo', cursive;
+	font-family: 'Bitter', sans-serif;
 }

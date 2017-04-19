@@ -13,7 +13,7 @@
 
 	<head>
 		<link rel="stylesheet" href="account.css">
-		<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Bitter" rel="stylesheet">
 	</head>
 	
 	<div class = "logo">

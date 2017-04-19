@@ -3,7 +3,9 @@
     include_once 'form.php';
 	$dao = new Dao();
 
-
+	if(!isset($givenLogin)){
+		$givenLogin = "";
+	}
 	
 	
    $error = "";
@@ -11,6 +13,8 @@
       // username and password sent from form 
       
       $myusername = $_POST['username'];
+	  $_SESSION["GIVEN_LOGIN"] = $myusername;
+	  $givenLogin = $myusername;
       $mypassword = hash('sha512', $_POST['password'] . 'x!zral78u1xD');
       
       $count = $dao->getNumUserWithPass($myusername, $mypassword);
@@ -34,7 +38,12 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="form.css">
-		<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Bitter" rel="stylesheet">
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="formerror.js"></script>
+		<script type="text/javascript" src="../js/jquery.validate.js"></script>
+		<script type="text/javascript" src="login.js"></script>
 	</head>
 	
 	<header class="logoHeader">
@@ -46,12 +55,12 @@
 	
 	<div class="centerPage">
 		<?php echo '<div class = "formError"><p>' . htmlspecialchars($error) . '</p></div>' ?>
-		<form action = "" method = "post">
+		<form action = "" method = "post" id="loginForm">
 		
 			<div class = "accountInfo">
 				<label for="user" class="formLabel">Username:</label>
 				<br>
-				<input type="text" id="user" class="formInput" name="username">
+				<input type="text" id="user" class="formInput" name="username" value="<?php echo $givenLogin ?>">
 			</div>
 			<div class = "accountInfo">
 				<label for="pass" class="formLabel">Password:</label>

@@ -45,6 +45,7 @@ a.mainPgButton:hover{
 	height:60%;
 	text-align:center;
 	font-size:40;
+	width:98%;
 }
 
 #greatMovieText{
@@ -75,7 +76,7 @@ a.mainPgButton:hover{
 
 body{
 	background: linear-gradient(white, orange);
-	font-family: 'Baloo', cursive;
+	font-family: 'Bitter', serif;
 	margin: 0px;
 	padding: 0px;
 }
