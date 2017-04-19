@@ -138,7 +138,7 @@
       }
       
       if(!$signUpError){
-            $hashpass = hash('sha512', $passwordname);
+            $hashpass = hash('sha512', $passwordname . 'x!zral78u1xD');
             
             $dao->createUser($username, $hashpass, $emailname, $fnamename, $lnamename);          
       

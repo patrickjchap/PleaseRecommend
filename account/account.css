@@ -84,7 +84,60 @@
 }
 
 .tableContent{
-	border-style:dotted;
+    border-style: solid;
+    overflow-y:scroll;
+    height:90%;
+    display:block;
+    width: 99%;
+}
+
+#labelTable{
+    width: 99%;
+}    
+
+tr{
+    border-style:solid;
+    width: 100%;
+}
+
+.picCol{
+    border-style:solid;
+    width: 20%;
+}
+
+.titleCol{
+    border-style:solid;
+    width: 30%;
+}
+
+.ratCol{
+    border-style:solid;
+    width: 30%;
+}
+
+.postRec{
+    border-style:solid;
+    width: 20%;
+}
+
+.titleRec{
+    border-style:solid;
+    width: 20%;
+}
+
+.genreRec{
+    border-style:solid;
+    width: 20%;
+}
+
+.imdbRec{
+    border-style:solid;
+    width: 20%;
+}
+
+.metaRec{
+    border-style:solid;
+    width: 20%;
 }
 
 .userInfo{
@@ -119,6 +172,7 @@
 	background-color:#ff8800;
 }
 
+
 #moviePicSearch{
     width: 10%;
     height: 40%;
@@ -133,4 +187,9 @@ body{
 	padding: 0px;
 	background-color:orange;
 	font-family: 'Baloo', cursive;
+}
+
+.textError{
+    color:red;
+	font-size: 1.1vw;
 }

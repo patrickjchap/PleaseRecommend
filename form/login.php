@@ -11,7 +11,7 @@
       // username and password sent from form 
       
       $myusername = $_POST['username'];
-      $mypassword = hash('sha512', $_POST['password']);
+      $mypassword = hash('sha512', $_POST['password'] . 'x!zral78u1xD');
       
       $count = $dao->getNumUserWithPass($myusername, $mypassword);
       

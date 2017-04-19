@@ -35,13 +35,25 @@
 	</header>	
 
 	<div class="middleSection">
-
+        <table id="labelTable">
+            <tr><th class="picCol">Poster</th><th class="titleCol">Title & Description</th><th class="ratCol">User Rating</th></tr>
+        </table>
 		<table class="tableContent">
 			<?php
-                foreach($info as $key => $value){
+                if(isset($info)){
+                    foreach($info as $key => $value){
                     
-                    echo "<tr><th>" . $key . "</th>" . "<th>" . $value . "</th><tr>";
+                        $omdbJson = file_get_contents("http://www.omdbapi.com/?i=" . preg_replace('/\s+/', '_', $key));
+                        $movieResult = json_decode($omdbJson, true);
+                        $title = $movieResult['Title'];
+                        $imgURL = $movieResult['Poster'];
+                        $desc = $movieResult['Plot'];
+                    
+                        echo "<tr><th class='picCol'><img src='" . $imgURL . "'/></th>" .    "<th class='titleCol'>" . $title . "<br> <br>" . $desc . "</th>" . "<th class='ratCol'>" . $value . "</th></tr>";
                  
+                    }
+                }else{
+                        echo "NO MOVIES FOR USER. PLEASE ADD MOVIES BY SEARCHING.";
                 }
             ?>
 		</table>
