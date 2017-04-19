@@ -7,14 +7,14 @@
      
     $currentRating = "#";
     $firstResult = "";
-    $movieTitle = "";
+    $movieID = "";
     $IMDBRating = "";
     $movieDescription = "";
     $imgURL = "";
     
     if(isset($_SESSION['first_result'])){
         $firstResult = $_SESSION['first_result'];
-        $movieTitle = $firstResult['Title'];
+        $movieID = $firstResult['imdbID'];
         $IMDBRating = $firstResult['imdbRating'];
         $movieDescription = $firstResult['Plot'];
         $imgURL = $firstResult['Poster'];
@@ -23,8 +23,8 @@
     if($firstResult != ""){   
             $json = $dao->getUserJson($username);
             $info = json_decode($json, true);
-            if(isset($info[$firstResult['Title']])){
-                $currentRating = $info[$firstResult['Title']];
+            if(isset($info[$firstResult['imdbID']])){
+                $currentRating = $info[$firstResult['imdbID']];
             }
     }
        
