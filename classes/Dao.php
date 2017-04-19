@@ -1,10 +1,10 @@
 <?php
 
 	class Dao {
-		private $host = "localhost";
-		private $db = "mysql";
-		private $user = "root";
-		private $password = "";
+		private $host = "us-cdbr-iron-east-03.cleardb.net";
+		private $db = "heroku_2491fbc37f62e3d";
+		private $user = "b4efd51360a489";
+		private $password = "04b2fd54";
 		
 		public function getConnection() {
 			try{
